@@ -1,0 +1,4 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule dogs-playing-poker\.png$ image.php [QSA,L]
+</IfModule>

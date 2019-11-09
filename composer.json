@@ -1,0 +1,40 @@
+{
+    "name": "cliffordvickrey/dogs-playing-poker",
+    "description": "They're dogs! And they're playing poker!",
+    "homepage": "http://github.com/cliffordvickrey/dogs-playing-poker",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Clifford Vickrey",
+            "email": "clifforddavidvickrey@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-imagick": "*",
+        "php": ">=7.2"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^0.11.16",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cliffordvickrey\\DogsPlayingPoker\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\Cliffordvickrey\\DogsPlayingPoker\\": "tests/src/"
+        }
+    },
+    "config": {
+        "process-timeout": 0,
+        "sort-packages": true
+    },
+    "scripts": {
+        "analyze": "phpstan analyse",
+        "start": "php -S localhost:8080 -t public",
+        "test": "phpunit"
+    }
+}
