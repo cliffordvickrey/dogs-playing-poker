@@ -9,7 +9,7 @@
             var util = this.util;
 
             xhr.open("POST", "dogs-playing-poker.png", true);
-            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhr.responseType = "blob";
 
             view.status.className = "text-muted";
@@ -25,7 +25,7 @@
                     var cards = String(this.getResponseHeader("Dogs-Playing-Poker-Cards")).split(",");
 
                     view.caption.innerHTML = "The dogs have been dealt " + util.buildCardMessage(cards)
-                        + ".<br />Dogs Playing Poker image #" + util.escapeHtml(responseId) + ".";
+                        + ".<br /><br />Dogs Playing Poker image #" + util.escapeHtml(responseId) + ".";
                     view.image.src = URL.createObjectURL(this.response);
                     view.status.innerText = "Your dogs have loaded successfully!";
                     view.status.className = "text-success";
