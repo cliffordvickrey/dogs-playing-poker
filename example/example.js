@@ -33,14 +33,14 @@
                 }
 
                 view.status.innerHTML = "There was an error!";
-                view.status.className = "text-error";
+                view.status.className = "text-danger";
             };
 
             xhr.onerror = function () {
                 view.enableForm();
 
                 view.status.innerText = "There was a network error";
-                view.status.className = "text-error";
+                view.status.className = "text-danger";
             };
 
             xhr.send("permutationId=" + view.permutationId.value);
