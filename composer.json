@@ -2,7 +2,7 @@
     "name": "cliffordvickrey/dogs-playing-poker",
     "description": "They're dogs! And they're playing poker!",
     "homepage": "http://github.com/cliffordvickrey/dogs-playing-poker",
-    "type": "project",
+    "type": "library",
     "license": "MIT",
     "authors": [
         {
