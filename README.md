@@ -11,6 +11,11 @@ Run the following to install this library:
 $ composer require cliffordvickrey/dogs-playing-poker
 ```
 
+## Requirements
+
+* PHP 7.2 or above
+* Imagick extension installed and enabled
+
 ## Usage
 
 ```php

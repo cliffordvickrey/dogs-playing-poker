@@ -49,6 +49,7 @@
 
     var View = function () {
         this.caption = document.getElementById("dogs-playing-poker-caption");
+        this.formReset = document.getElementById("dogs-playing-poker-reset");
         this.formSubmit = document.getElementById("dogs-playing-poker-submit");
         this.image = document.getElementById("dogs-playing-poker");
         this.permutationId = document.getElementById("dogs-playing-poker-permutation-id");
@@ -56,16 +57,23 @@
 
         this.permutationId.value = "";
 
+        var permutationId = this.permutationId;
+        this.formReset.addEventListener("click", function () {
+            permutationId.value = "";
+        });
+
         this.permutationId.addEventListener("keyup", function () {
             this.value = this.value.replace(/\D/g, "").replace(/^0+/, "");
         });
 
         this.enableForm = function () {
+            this.formReset.disabled = false;
             this.formSubmit.disabled = false;
             this.permutationId.disabled = false;
         };
 
         this.disableForm = function () {
+            this.formReset.disabled = true;
             this.formSubmit.disabled = true;
             this.permutationId.disabled = true;
         };
