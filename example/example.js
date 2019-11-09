@@ -83,7 +83,7 @@
         this.escapeHtml = function (text) {
             var tempDiv = document.createElement("div");
             tempDiv.innerText = text;
-            return tempDiv.innerText;
+            return tempDiv.innerHTML;
         };
 
         this.buildCardMessage = function (cards) {
