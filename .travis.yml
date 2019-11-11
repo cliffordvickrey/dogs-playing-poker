@@ -13,6 +13,7 @@ matrix:
     - php: nightly
 
 before_script:
+  - pecl install imagick
   - composer require php-coveralls/php-coveralls:^2.1.0
   - composer install -n
 
