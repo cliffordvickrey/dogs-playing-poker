@@ -68,17 +68,17 @@
         });
 
         this.notice = function (message) {
-            this.status.innerText = message;
+            this.status.innerHTML = message;
             this.status.className = "text-muted";
         };
 
         this.error = function (message) {
-            this.status.innerText = message;
+            this.status.innerHTML = message;
             this.status.className = "text-danger";
         };
 
         this.success = function (message) {
-            this.status.innerText = message;
+            this.status.innerHTML = message;
             this.status.className = "text-success";
         };
 
