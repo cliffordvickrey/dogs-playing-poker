@@ -7,6 +7,10 @@ namespace Cliffordvickrey\DogsPlayingPoker\ValueObject;
 use function array_merge;
 use function array_reduce;
 
+/**
+ * Encapsulates coordinates for a polygonal matrix. Use self::@toCoordinatesArray to retrieve the coordinates in the
+ * array format that a particular Imagick method expects
+ */
 final class Matrix
 {
     private $points;
@@ -24,8 +28,8 @@ final class Matrix
     }
 
     /**
-     * @param bool $associative
-     * @return array
+     * @param bool $associative Whether to return a list of associative arrays ['x' => x, 'y' => y]
+     * @return array The array of coordinates
      */
     public function toCoordinatesArray(bool $associative = false): array
     {

@@ -65,7 +65,7 @@ class PermutationTest extends TestCase
         $permutations = array_map(function (array $permutation): string {
             return implode('', $permutation);
         }, $permutations);
-        $this->assertCount(5040, $permutations);
+        $this->assertCount(5040, array_unique($permutations));
     }
 
     public function testGetPermutationIdLessThanOne(): void

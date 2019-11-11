@@ -62,6 +62,8 @@ class ImageRepositoryTest extends TestCase
         unset($cardSourceConfig[2]['y']);
         unset($cardSourceConfig[3]['width']);
         unset($cardSourceConfig[4]['height']);
+        $cardSourceConfig[5] = 'blah';
+        $cardDestinationConfig[1] = 'blah';
 
         return new ImageRepository(
             $cardsFileName,
@@ -120,4 +122,17 @@ class ImageRepositoryTest extends TestCase
         $this->expectException(DogsPlayingPokerTypeException::class);
         $this->repository->getCardImage(4, 0);
     }
+
+    public function testGetCardImageBadSourceConfig(): void
+    {
+        $this->expectException(DogsPlayingPokerTypeException::class);
+        $this->repository->getCardImage(5, 0);
+    }
+
+    public function testGetCardImageBadDestinationConfig(): void
+    {
+        $this->expectException(DogsPlayingPokerTypeException::class);
+        $this->repository->getCardImage(0, 1);
+    }
+
 }

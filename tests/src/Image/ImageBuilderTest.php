@@ -232,4 +232,19 @@ class ImageBuilderTest extends TestCase
         $imageBuilder = ImageBuilder::fromImageAndConfig($this->im, $this->config);
         $this->assertNull($imageBuilder->getMask());
     }
+
+    public function testFromImageAndConfigWrongMaskType(): void
+    {
+        $this->config['mask'] = 'blah';
+        $this->expectException(DogsPlayingPokerTypeException::class);
+        ImageBuilder::fromImageAndConfig($this->im, $this->config);
+    }
+
+    public function testFromImageAndConfigWrongDistortionType(): void
+    {
+        $this->config['distortion'] = 'blah';
+        $this->expectException(DogsPlayingPokerTypeException::class);
+        ImageBuilder::fromImageAndConfig($this->im, $this->config);
+    }
+
 }

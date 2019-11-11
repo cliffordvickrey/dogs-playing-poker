@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Generates a Dogs Playing Poker painting. POST a "permutationId" parameter to see a specific painting; otherwise,
+ * show a random painting.
+ */
+
 declare(strict_types=1);
 
 use Cliffordvickrey\DogsPlayingPoker\DogsPlayingPokerGenerator;

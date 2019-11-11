@@ -19,7 +19,7 @@ final class Image implements ImageInterface
 {
     /** @var Imagick */
     private $im;
-    /** @var Coordinates|null */
+    /** @var Coordinates */
     private $coordinates;
 
     /**

@@ -13,14 +13,14 @@ $ composer require cliffordvickrey/dogs-playing-poker
 
 ## Requirements
 
-* PHP 7.2 or above
+* 64-bit build of PHP 7.2 or above
 * Imagick extension installed and enabled
 
 ## Usage
 
 ```php
 // build the generator
-$generator = DogsPlayingPokerGenerator::build();
+$generator = Cliffordvickrey\DogsPlayingPoker\DogsPlayingPokerGenerator::build();
 
 // generate a painting at random ...
 $painting = $generator->generate();

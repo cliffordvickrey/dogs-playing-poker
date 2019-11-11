@@ -1,3 +1,8 @@
+/**
+ * Example JS for the Dogs Playing Poker library. Posts an Ajax request to image.php, optionally with a permutation ID.
+ * The response should be an image blob, with headers describing the generated painting.
+ */
+
 (function () {
     var DogLoader = function (view, util) {
         this.view = view;
@@ -12,8 +17,7 @@
             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhr.responseType = "blob";
 
-            view.status.className = "text-muted";
-            view.status.innerHTML = "Your dogs are loading &hellip;";
+            view.notice("Your dogs are loading &hellip;");
 
             view.disableForm();
 
@@ -27,20 +31,17 @@
                     view.caption.innerHTML = "The dogs have been dealt " + util.buildCardMessage(cards)
                         + ".<br /><br />Dogs Playing Poker image #" + util.escapeHtml(responseId) + ".";
                     view.image.src = URL.createObjectURL(this.response);
-                    view.status.innerText = "Your dogs have loaded successfully!";
-                    view.status.className = "text-success";
+
+                    view.success("Your dogs have loaded successfully!");
                     return;
                 }
 
-                view.status.innerHTML = "There was an error!";
-                view.status.className = "text-danger";
+                view.error("There was an error!");
             };
 
             xhr.onerror = function () {
                 view.enableForm();
-
-                view.status.innerText = "There was a network error";
-                view.status.className = "text-danger";
+                view.error("There was a network error");
             };
 
             xhr.send("permutationId=" + view.permutationId.value);
@@ -65,6 +66,21 @@
         this.permutationId.addEventListener("keyup", function () {
             this.value = this.value.replace(/\D/g, "").replace(/^0+/, "");
         });
+
+        this.notice = function (message) {
+            this.status.innerText = message;
+            this.status.className = "text-muted";
+        };
+
+        this.error = function (message) {
+            this.status.innerText = message;
+            this.status.className = "text-danger";
+        };
+
+        this.success = function (message) {
+            this.status.innerText = message;
+            this.status.className = "text-success";
+        };
 
         this.enableForm = function () {
             this.formReset.disabled = false;
