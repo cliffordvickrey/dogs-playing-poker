@@ -1,5 +1,8 @@
 # cliffordvickrey/dogs-playing-poker
 
+[![Build Status](https://travis-ci.com/cliffordvickrey/dogs-playing-poker.svg?branch=master)](https://travis-ci.com/cliffordvickrey/dogs-playing-poker/)
+[![Coverage Status](https://coveralls.io/repos/github/cliffordvickrey/dogs-playing-poker/badge.svg)](https://coveralls.io/github/cliffordvickrey/dogs-playing-poker)
+
 Ever look at Cassius Marcellus Coolidge's seminal chef d'oeuvre *Dogs Playing Poker* and think,  "this is okay, but wouldn't it be nice if I could see the painting with any of 6.6 quadrillion possible card combinations?" No? Too bad! This library generates any one of 6,622,345,729,233,223,680 possible hand variations of dogs playing poker.
 
 Online at https://www.cliffordvickrey.com/dogs-playing-poker/example
